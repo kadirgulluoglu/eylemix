@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "243617798053",
+    "project_id": "eylemix",
+    "storage_bucket": "eylemix.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243617798053:android:9b16bfddc8290735abfa4c",
+        "android_client_info": {
+          "package_name": "com.example.eylemix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpcALhpRuy32aKk7rvMgVWiZ-XFXvT3Jg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
