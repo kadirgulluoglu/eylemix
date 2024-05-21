@@ -248,10 +248,13 @@ class _EarthquakerPageState extends State<EarthquakerPage> {
         onPressed: () {
           showOptions(context);
         },
-        elevation: 10.0, // Butona gölge ekler
+        elevation: 10.0,
         shape: const RoundedRectangleBorder(
-          borderRadius:
-              BorderRadius.all(Radius.circular(16.0)), // Daha yuvarlak köşeler
+          borderRadius: BorderRadius.all(
+            Radius.circular(
+              16.0,
+            ),
+          ),
         ),
         child: const Icon(Icons.add),
       ),

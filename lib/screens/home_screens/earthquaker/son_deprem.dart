@@ -1,6 +1,5 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:google_solution_challenge/screens/home_screens/model/deprem_model.dart';
+import 'package:google_solution_challenge/screens/home_screens/earthquaker/son_deprem_maps.dart';
 import 'package:google_solution_challenge/screens/home_screens/viewmodel/deprem_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -12,7 +11,8 @@ class SonDeprem extends StatefulWidget {
   State<SonDeprem> createState() => _SonDepremState();
 }
 
-class _SonDepremState extends State<SonDeprem> {
+class _SonDepremState extends State<SonDeprem>
+    with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final viewModel = Provider.of<DepremViewModel>(context);
@@ -20,6 +20,26 @@ class _SonDepremState extends State<SonDeprem> {
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         title: Text('Recent Earthquakes'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ChangeNotifierProvider.value(
+                      value: viewModel,
+                      child: SonDepremMaps(
+                        viewModel: viewModel,
+                      ),
+                    );
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.map_outlined),
+          ),
+        ],
       ),
       body: viewModel.state == ViewState.busy
           ? Center(
